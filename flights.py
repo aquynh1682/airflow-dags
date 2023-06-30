@@ -11,7 +11,7 @@ args = {
 dag = DAG(
     "flights-0630022634",
     default_args=args,
-    schedule_interval="@hourly",
+    schedule_interval="@daily",
     start_date=days_ago(1),
     description="Created with Elyra 2.2.4 pipeline editor using flights.pipeline.",
     is_paused_upon_creation=False,
