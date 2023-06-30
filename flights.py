@@ -5,11 +5,11 @@ from airflow.utils.dates import days_ago
 
 # Setup default args with older date to automatically trigger when uploaded
 args = {
-    "project_id": "flights-0630022634",
+    "project_id": "flights-0630023838",
 }
 
 dag = DAG(
-    "flights-0630022634",
+    "flights-0630023838",
     default_args=args,
     schedule_interval="@daily",
     start_date=days_ago(1),
@@ -25,7 +25,7 @@ notebook_op_d5009697_771e_4f71_bc20_e52d905c9f9d = NotebookOp(
     notebook="Machine-Learning-on-Kubernetes/Chapter09/pipeline-helpers/start-spark-cluster.py",
     cos_endpoint="http://minio-ml-workshop:9000/",
     cos_bucket="airflow",
-    cos_directory="flights-0630022634",
+    cos_directory="flights-0630023838",
     cos_dependencies_archive="start-spark-cluster-d5009697-771e-4f71-bc20-e52d905c9f9d.tar.gz",
     pipeline_outputs=["spark-info.txt"],
     pipeline_inputs=[],
@@ -52,7 +52,7 @@ notebook_op_5ad53c7e_c1a5_4dab_b766_cd6e3642891a = NotebookOp(
     notebook="Machine-Learning-on-Kubernetes/Chapter09/merge_data.ipynb",
     cos_endpoint="http://minio-ml-workshop:9000/",
     cos_bucket="airflow",
-    cos_directory="flights-0630022634",
+    cos_directory="flights-0630023838",
     cos_dependencies_archive="merge_data-5ad53c7e-c1a5-4dab-b766-cd6e3642891a.tar.gz",
     pipeline_outputs=[],
     pipeline_inputs=["spark-info.txt"],
@@ -82,7 +82,7 @@ notebook_op_b6d6a9d3_65b6_4ef6_9ce8_4d713bea5e2f = NotebookOp(
     notebook="Machine-Learning-on-Kubernetes/Chapter09/pipeline-helpers/stop-spark-cluster.py",
     cos_endpoint="http://minio-ml-workshop:9000/",
     cos_bucket="airflow",
-    cos_directory="flights-0630022634",
+    cos_directory="flights-0630023838",
     cos_dependencies_archive="stop-spark-cluster-b6d6a9d3-65b6-4ef6-9ce8-4d713bea5e2f.tar.gz",
     pipeline_outputs=[],
     pipeline_inputs=["spark-info.txt"],
